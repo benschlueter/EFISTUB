@@ -1,7 +1,7 @@
 pkgname=efistub-wrapper
 pkgrel=1
 pkgver=0
-pkgdesc='Passes kernel-commandline to the kernel if the UEFI does not support it e.g most DELL laptops'
+pkgdesc='Passes kernel-commandline to the kernel if the UEFI does not support it e.g most DELL laptops; NO use of Systemd-boot'
 arch=('x86_64')
 source=("${pkgname}::git+https://github.com/Kakashiiiiy/EFISTUB.git")
 license=('None')
@@ -14,16 +14,17 @@ provides=("efistub-wrapper")
 conflicts=("efistub-wrapper")
 options=(debug !strip)
 
-CMDLINE="" # <- If you do not want /proc/cmdline change it here
+
 
 prepare(){
 	cd ${srcdir}/${pkgname}
+	CMDLINE=$(cat /proc/cmdline) # <- If you do not want /proc/cmdline change it here
 	./configure
 }
 
 build(){
 		cd ${srcdir}/${pkgname}
-		printf "If you don't trust my .a/.o files you can install gnu-efi-libs and adjust LIB and EFILIB with you local dirs\n\n"
+		printf "If you don't trust my precompiled binaries you can install gnu-efi-libs and adjust LIB and EFILIB with you local dirs\n\n"
 		make
 }
 

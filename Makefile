@@ -21,7 +21,7 @@ LDFLAGS         = -nostdlib -znocombreloc -T $(EFI_LDS) -shared -Bsymbolic -L $(
 all: $(TARGET)
 
 efistub.o:
-		sh replacecmd.sh && $(CC) -g -O3 -c $(SRC) $(CFLAGS) -o efistub.o #-I/usr/include/efi
+		$(CC) -g -O3 -c $(SRC) $(CFLAGS) -o efistub.o
 
 efistub.so: $(OBJS)
 	ld $(LDFLAGS) $(OBJS) -o $@ -lefi -lgnuefi
