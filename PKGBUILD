@@ -19,12 +19,12 @@ options=(debug !strip)
 prepare(){
 	cd ${srcdir}/${pkgname}
 	CMDLINE=$(cat /proc/cmdline) # <- If you do not want /proc/cmdline change it here
-	./configure
+	source configure
 }
 
 build(){
 		cd ${srcdir}/${pkgname}
-		printf "If you don't trust my precompiled binaries you can install gnu-efi-libs and adjust LIB and EFILIB with you local dirs\n\n"
+		printf "If you don't trust my precompiled binaries you can install gnu-efi-libs and adjust LIB and EFILIB (MAKEFILE) with you local dirs\n\n"
 		make
 }
 
