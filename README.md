@@ -26,5 +26,12 @@ mv efistub.efi /boot/
 efibootmgr -c -d /dev/sd* -p *PARTITIONNUMBER* -l 'efistub.efi' -L 'Arch-EFI' 
 ```
 
+On Arch Linux:
+```
+git clone https://github.com/Kakashiiiiy/EFISTUB.git
+cd EFISTUB
+makepkg -si
+efibootmgr -c -d /dev/sd* -p *PARTITIONNUMBER* -l 'efistub.efi' -L 'Arch-EFI' 
+```
 
 enjoy.
