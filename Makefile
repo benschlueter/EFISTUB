@@ -3,7 +3,6 @@ CC				= gcc
 SRC 			= main.c
 OBJS            = efistub.o
 TARGET          = efistub.efi
-CMDLINE 		= initrd=\intel-ucode.img initrd=\initramfs-linux.img root=UUID=3263e30d-3412-4563-9f9a-90a095306d7e rw elevator=noop quiet loglevel=3 rd.udev.log_priority=3 rd.systemd.show_status=auto systemd.show_status=auto systemd.fsck=skip amdgpu.dc=1
 
 EFIINC          = include/efi
 EFIINCS         = -I$(EFIINC) -I$(EFIINC)/$(ARCH) -I$(EFIINC)/protocol
@@ -32,3 +31,7 @@ efistub.so: $(OBJS)
 
 clean:
 	rm $(TARGET) $(OBJS) efistub.so main.c
+
+install: $(TARGET)
+		mkdir -p $(DESTDIR)/boot/
+		mv $(TARGET) $(DESTDIR)
