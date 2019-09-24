@@ -34,4 +34,4 @@ clean:
 
 install: $(TARGET)
 		mkdir -p $(DESTDIR)/boot/
-		mv $(TARGET) $(DESTDIR)
+		mv $(TARGET) $(DESTDIR)/boot/
