@@ -13,8 +13,8 @@ if [[ -z $CMDLINE ]]; then
 	fi
 fi
 
-CMDLINE="${CMDLINE//'\'/'\\\\'}" #Replaced with 4 Cause sed trims
-CMDLINE="${CMDLINE//'/'/'\\\\'}" #Replaced with 4 Cause sed trims
+CMDLINE="${CMDLINE//'\'/'/'}" #Replaced with 4 Cause sed trims
+#CMDLINE="${CMDLINE//'/'/'\\\\'}" #Replaced with 4 Cause sed trims
 
 printf "\033[0;31m$CMDLINE\033[0m\n"
 
