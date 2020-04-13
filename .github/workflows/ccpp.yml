@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: configure
-      run: echo 1 | ./configure
+      run: echo 1 | sh configure
     - name: make
       run: make
