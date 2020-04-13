@@ -38,7 +38,7 @@ enjoy.
 
 If you do not trust my precompiled binaries or want the uptodate version of them change 
 ```
-LIB = lib -> lib/usr/lib64
-EFILIB = lib -> lib/usr/lib
+LIB = lib -> /usr/lib64
+EFILIB = lib -> /usr/lib
 ```
 in the Makefile. Make sure you've installed gnu-efi-libs for Arch or the specific package for your distribution.
