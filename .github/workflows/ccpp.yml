@@ -12,4 +12,4 @@ jobs:
     - name: configure
       run: echo 0 | ./configure 
     - name: make
-      run: cp efistub.c main.c ; make
+      run: make
