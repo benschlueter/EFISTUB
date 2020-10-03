@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 #
 if [[ -z $CMDLINE ]]; then
 	echo "Do you want to use your /proc/cmdline [0] or speficy the line by yourself [1]"

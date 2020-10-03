@@ -1,9 +1,9 @@
 //* Most Code is copied from https://github.com/karelzak/gummiboot/blob/master/src/efi/gummiboot.c
 // and slightly adjusted 
 
-#include <efi/efi.h>
-#include <efi/efilib.h>
-#include <efi/x86_64/efibind.h>
+#include "include/efi/efi.h"
+#include "include/efi/efilib.h"
+#include "include/efi/x86_64/efibind.h"
 
 typedef struct {
         VOID *options;
